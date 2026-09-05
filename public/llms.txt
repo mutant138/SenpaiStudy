@@ -1,0 +1,38 @@
+# StudySenpai
+
+> Clan-based live coding cohorts run by working software engineers and freelancers. Small live batches, senpai code reviews, zero spam calls, and no upfront fees — students pay only after 2 free live demo classes.
+
+## Overview
+- **Name**: StudySenpai
+- **Website**: https://studysenpai.lovable.app/
+- **Tagline**: Education by engineers for future builders.
+- **Model**: Live, hands-on "clan" batches (capped seats), not recorded video playlists.
+- **Schedule**: Live sessions Monday to Friday between 8:00 PM and 10:00 PM IST (scheduled flexibly based on student availability).
+- **Languages**: Available in Tamil and English.
+- **Batch Cycle**: New clans launch on the 5th of every month (1st–5th is Clan Formation & Transition).
+- **Pricing**: ₹0 upfront. Pay ₹499 only after attending 2 free live demo sessions.
+- **Placement Support**: Final class dedicated to ATS-cracking resume building, portfolio curation, and tech interview preparation.
+- **Placement Policy**: Transparent disclaimer — no fake placement guarantees; real engineering merit and interview prep.
+- **Communication Policy**: WhatsApp and Telegram only. Zero cold calls.
+- **Credentials**: Blockchain-verified, tamper-proof certificates verifiable via direct QR scan.
+
+## Foundation Roadmap (₹499 per 1-month phase)
+- **Phase 1 — Web Fundamentals**: HTML5, Modern CSS, JavaScript ES6+, DOM Manipulation. Zero experience required.
+- **Phase 2 — Modern Frontend & BaaS**: React.js, State Management, Firebase Auth & Cloud Firestore.
+- **Phase 3 — Backend & Database Mastery**: Node.js, Express.js, MongoDB, REST APIs, Authentication & Security.
+
+## Advanced Tracks (₹499 per phase)
+- **Track A — Web3 & Blockchain Engineering**: Solidity, Smart Contracts, Hardhat, Contract Deployment, Testnets, ERC Tokens, OpenZeppelin.
+- **Track B — Generative AI & Autonomous Systems**: RAG Frameworks, LLM Application Building, Local LLMs, Cloud LLMs, Agentic Tools (OpenClaw).
+
+## Flagship 6-Month Cohorts (Coming Soon)
+- 6-Month Full Stack MERN Clan
+- 6-Month Gen AI Full Stack Clan
+- 6-Month Web3 Full Stack Clan
+
+## Free Community & Resources
+- **Telegram Squad**: https://t.me/+E0V2bpCg3LUzYjZl (Free study roadmaps, cheat sheets, open-source project support)
+- **WhatsApp Broadcast Channel**: https://whatsapp.com/channel/0029VbDhrSV3mFY7c5rblX2V (Clan announcements & study material alerts)
+
+## Admissions & Contact
+Students can reserve seats via the admission form on the homepage: https://studysenpai.lovable.app/#join
