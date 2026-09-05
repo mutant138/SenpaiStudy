@@ -176,16 +176,18 @@ export function Roadmap() {
             </motion.div>
           ))}
         </div>
+      </div>
 
-        {/* Timings, Placement Support & Disclaimer Strip */}
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <Reveal delay={0.05}>
-            <article className="glass glow-hover h-full rounded-3xl p-6">
+      {/* Timings, Placement Support & Disclaimer Strip - Outside timeline line */}
+      <div className="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal delay={0.05}>
+          <article className="glass glow-hover flex h-full flex-col justify-between rounded-3xl p-6">
+            <div>
               <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl neon-surface">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl neon-surface">
                   <Clock className="h-5 w-5 text-primary-foreground" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <span className="text-[10px] font-black tracking-widest text-accent uppercase">
                     Live Class Schedule
                   </span>
@@ -195,16 +197,18 @@ export function Roadmap() {
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 Live interactive classes held strictly on weekdays between 8:00 PM and 10:00 PM IST, scheduled flexibly based on student and working professional availability.
               </p>
-            </article>
-          </Reveal>
+            </div>
+          </article>
+        </Reveal>
 
-          <Reveal delay={0.1}>
-            <article className="glass glow-hover h-full rounded-3xl p-6">
+        <Reveal delay={0.1}>
+          <article className="glass glow-hover flex h-full flex-col justify-between rounded-3xl p-6">
+            <div>
               <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl neon-surface">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl neon-surface">
                   <Briefcase className="h-5 w-5 text-primary-foreground" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <span className="text-[10px] font-black tracking-widest text-accent uppercase">
                     Final Class Milestone
                   </span>
@@ -214,16 +218,18 @@ export function Roadmap() {
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 The final class of every track is a dedicated Placement Sprint: ATS-cracking resume building, portfolio project polishing, and tech interview preparation.
               </p>
-            </article>
-          </Reveal>
+            </div>
+          </article>
+        </Reveal>
 
-          <Reveal delay={0.15}>
-            <article className="glass glow-hover h-full rounded-3xl p-6 sm:col-span-2 lg:col-span-1 border border-border/80">
+        <Reveal delay={0.15}>
+          <article className="glass glow-hover flex h-full flex-col justify-between rounded-3xl p-6 sm:col-span-2 lg:col-span-1 border border-border/80">
+            <div>
               <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary/80 text-muted-foreground">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary/80 text-muted-foreground">
                   <AlertCircle className="h-5 w-5 text-accent" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <span className="text-[10px] font-black tracking-widest text-muted-foreground uppercase">
                     Honest Disclaimer
                   </span>
@@ -233,9 +239,9 @@ export function Roadmap() {
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 <strong className="text-foreground">Disclaimer:</strong> We do NOT offer placement guarantees. We provide real engineering skills, ATS resume building & interview prep — placement depends on your dedication.
               </p>
-            </article>
-          </Reveal>
-        </div>
+            </div>
+          </article>
+        </Reveal>
       </div>
     </section>
   );
