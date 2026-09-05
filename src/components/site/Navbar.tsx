@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Menu, X, Swords } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const links = [
   { id: "philosophy", label: "Philosophy" },
@@ -41,12 +42,14 @@ export default function Navbar() {
       >
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex min-w-0 shrink-0 items-center gap-2"
+          className="flex min-w-0 shrink-0 items-center gap-3"
           aria-label="StudySenpai home"
         >
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl neon-surface shadow-[var(--shadow-neon)]">
-            <Swords className="h-5 w-5 text-primary-foreground" />
-          </span>
+          <img
+            src={logoImg}
+            alt="StudySenpai Logo"
+            className="h-9 w-9 shrink-0 rounded-xl object-cover ring-1 ring-primary/40 shadow-[var(--shadow-neon)]"
+          />
           <span className="font-display truncate text-lg font-black tracking-widest">
             STUDY<span className="neon-text">SENPAI</span>
           </span>
