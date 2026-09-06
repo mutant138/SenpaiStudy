@@ -1,7 +1,10 @@
-import { useState, type FormEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { motion } from "motion/react";
 import { toast } from "sonner";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Loader2 } from "lucide-react";
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzc2Vi9u844cCSoLEWSG1EdSe2yZVw8nRCyzodq1mOZePvrDgvYR_LXHOEgX3pqHiGc/exec";
 
 const years = ["1st Year", "2nd Year", "3rd Year", "4th Year", "Graduated / Working"];
 const languages = ["Tamil", "English"];
@@ -19,10 +22,12 @@ const field =
 export default function AdmissionForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const get = (k: string) => String(data.get(k) ?? "").trim();
     const next: Record<string, string> = {};
 
@@ -42,11 +47,39 @@ export default function AdmissionForm() {
       return;
     }
 
-    setSent(true);
-    toast.success("⚡ Seat reserved, future Senpai!", {
-      description: "Watch WhatsApp for your clan links. We never call — promise.",
-    });
-    e.currentTarget.reset();
+    setSubmitting(true);
+    try {
+      const payload = {
+        name: get("name"),
+        college: get("college"),
+        department: get("department"),
+        year: get("year"),
+        phone: get("phone"),
+        email: get("email"),
+        language: get("language"),
+        track: get("track"),
+        goals: get("goals"),
+      };
+
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      setSent(true);
+      toast.success("⚡ Seat reserved, future Senpai!", {
+        description: "Watch WhatsApp for your clan links. We never call — promise.",
+      });
+      form.reset();
+    } catch (err) {
+      toast.error("Failed to submit admission form", {
+        description: "Please check your connection and try again.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const Err = ({ k }: { k: string }) =>
@@ -178,9 +211,18 @@ export default function AdmissionForm() {
 
           <button
             type="submit"
-            className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-xl neon-surface px-6 py-4 font-display text-sm font-black tracking-widest text-primary-foreground uppercase shadow-[var(--shadow-neon)] transition-transform hover:scale-[1.02]"
+            disabled={submitting}
+            className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-xl neon-surface px-6 py-4 font-display text-sm font-black tracking-widest text-primary-foreground uppercase shadow-[var(--shadow-neon)] transition-transform hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <Sparkles className="h-4 w-4" /> Reserve My Seat in Next Clan ⚡
+            {submitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" /> Enrolling In Clan...
+              </>
+            ) : (
+              <>
+                <Sparkles className="h-4 w-4" /> Reserve My Seat in Next Clan ⚡
+              </>
+            )}
           </button>
         </form>
 
