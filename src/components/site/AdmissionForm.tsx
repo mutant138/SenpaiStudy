@@ -49,23 +49,21 @@ export default function AdmissionForm() {
 
     setSubmitting(true);
     try {
-      const payload = {
-        name: get("name"),
-        college: get("college"),
-        department: get("department"),
-        year: get("year"),
-        phone: get("phone"),
-        email: get("email"),
-        language: get("language"),
-        track: get("track"),
-        goals: get("goals"),
-      };
+      const formData = new FormData();
+      formData.append("name", get("name"));
+      formData.append("college", get("college"));
+      formData.append("department", get("department"));
+      formData.append("year", get("year"));
+      formData.append("phone", get("phone"));
+      formData.append("email", get("email"));
+      formData.append("language", get("language"));
+      formData.append("track", get("track"));
+      formData.append("goals", get("goals"));
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: formData,
       });
 
       setSent(true);
