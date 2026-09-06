@@ -156,22 +156,33 @@ export function Roadmap() {
               }`}
             >
               <span className="absolute left-[9px] top-8 h-3.5 w-3.5 rounded-full neon-surface shadow-[var(--shadow-neon)] md:left-auto md:right-[-7px] md:top-9" />
-              <article className="glass glow-hover rounded-3xl p-6">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-display rounded-lg bg-primary/20 px-3 py-1 text-xs font-black tracking-widest text-primary-foreground">
-                    {p.n}
-                  </span>
-                  <span className="text-xs font-bold tracking-widest text-accent uppercase">{p.meta}</span>
+              <article
+                onClick={() => scrollTo("join")}
+                className="glass glow-hover group flex cursor-pointer flex-col justify-between rounded-3xl p-6 transition-all"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="font-display rounded-lg bg-primary/20 px-3 py-1 text-xs font-black tracking-widest text-primary-foreground">
+                      {p.n}
+                    </span>
+                    <span className="text-xs font-bold tracking-widest text-accent uppercase">{p.meta}</span>
+                  </div>
+                  <h3 className="font-display mt-4 text-xl font-black transition-colors group-hover:text-primary-foreground sm:text-2xl">
+                    {p.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    <span className="font-bold text-foreground">Scope: </span>
+                    {p.scope}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    <span className="font-bold text-foreground">Prerequisites: </span>
+                    {p.pre}
+                  </p>
                 </div>
-                <h3 className="font-display mt-4 text-xl font-black sm:text-2xl">{p.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  <span className="font-bold text-foreground">Scope: </span>
-                  {p.scope}
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  <span className="font-bold text-foreground">Prerequisites: </span>
-                  {p.pre}
-                </p>
+                <div className="mt-5 flex items-center justify-between border-t border-border/60 pt-4 text-xs font-bold text-accent group-hover:text-primary-foreground transition-colors">
+                  <span>Enroll in {p.n}</span>
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </div>
               </article>
             </motion.div>
           ))}
