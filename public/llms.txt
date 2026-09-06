@@ -31,6 +31,7 @@
 - 6-Month Web3 Full Stack Clan
 
 ## Free Community & Resources
+- **Academy Vault**: https://studysenpai.lovable.app/academy (Free visual guides on CPU processing, x86 vs ARM architecture, DNS & TCP internet routing, Stack vs Heap memory, and browser rendering engines)
 - **Telegram Squad**: https://t.me/+E0V2bpCg3LUzYjZl (Free study roadmaps, cheat sheets, open-source project support)
 - **WhatsApp Broadcast Channel**: https://whatsapp.com/channel/0029VbDhrSV3mFY7c5rblX2V (Clan announcements & study material alerts)
 

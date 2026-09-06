@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles, GraduationCap } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 
 const links = [
@@ -14,7 +14,13 @@ const links = [
 ];
 
 export function scrollTo(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (typeof window !== "undefined") {
+    if (window.location.pathname !== "/") {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 export default function Navbar() {
@@ -40,8 +46,8 @@ export default function Navbar() {
           scrolled ? "glass shadow-[var(--shadow-neon)]" : "border border-transparent"
         } mx-3 lg:mx-auto`}
       >
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <a
+          href="/"
           className="flex min-w-0 shrink-0 items-center gap-3"
           aria-label="StudySenpai home"
         >
@@ -53,7 +59,7 @@ export default function Navbar() {
           <span className="font-display truncate text-lg font-black tracking-widest">
             STUDY<span className="neon-text">SENPAI</span>
           </span>
-        </button>
+        </a>
 
         <div className="ml-auto hidden items-center gap-1 lg:flex">
           {links.map((l) => (
@@ -65,6 +71,14 @@ export default function Navbar() {
               {l.label}
             </button>
           ))}
+
+          <a
+            href="/academy"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-accent/40 bg-accent/10 px-3 py-2 text-sm font-bold text-accent transition-colors hover:bg-accent/20"
+          >
+            <GraduationCap className="h-4 w-4" /> Academy
+          </a>
+
           <button
             onClick={() => scrollTo("join")}
             className="ml-2 rounded-xl neon-surface px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-[var(--shadow-neon)] transition-transform hover:scale-105"
@@ -100,6 +114,13 @@ export default function Navbar() {
               {l.label}
             </button>
           ))}
+          <a
+            href="/academy"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-lg bg-accent/10 px-3 py-3 text-sm font-bold text-accent hover:bg-accent/20"
+          >
+            <GraduationCap className="h-4 w-4" /> Free Academy Vault
+          </a>
           <button
             onClick={() => {
               scrollTo("join");

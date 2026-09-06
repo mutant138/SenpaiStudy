@@ -211,6 +211,13 @@ html {
   scroll-behavior: smooth;
 }
 
+button,
+[role="button"],
+a,
+select {
+  cursor: pointer;
+}
+
 @utility neon-surface {
   background-image: var(--gradient-neon);
   background-color: var(--primary);

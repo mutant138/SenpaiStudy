@@ -488,6 +488,29 @@ export function Community() {
           </Reveal>
         ))}
       </div>
+
+      {/* Free Academy Teaser Banner */}
+      <Reveal delay={0.15}>
+        <div className="glass glow-hover mx-auto mt-8 flex max-w-5xl flex-col items-center justify-between gap-6 rounded-3xl p-7 sm:flex-row shadow-[var(--shadow-cyan)] border border-accent/30">
+          <div className="text-left">
+            <span className="text-[10px] font-black tracking-widest text-accent uppercase">
+              Free Engineering Academy
+            </span>
+            <h4 className="font-display mt-1 text-xl font-black">
+              Explore Computer Science Fundamentals
+            </h4>
+            <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+              Deep dive into x86 vs ARM, how CPUs work, internet packet routing, and memory models.
+            </p>
+          </div>
+          <a
+            href="/academy"
+            className="inline-flex shrink-0 items-center justify-center rounded-xl neon-surface px-5 py-3 text-xs font-black tracking-wider text-primary-foreground shadow-[var(--shadow-neon)] hover:scale-105 transition-transform"
+          >
+            Open Free Academy Vault →
+          </a>
+        </div>
+      </Reveal>
     </section>
   );
 }
@@ -500,7 +523,7 @@ export function Footer() {
     { id: "cohorts", label: "Cohorts" },
     { id: "senpais", label: "Senpais" },
     { id: "community", label: "Community" },
-  { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
   return (
     <footer className="border-t border-border px-4 py-12">
@@ -516,7 +539,7 @@ export function Footer() {
             © {new Date().getFullYear()} StudySenpai. All rights reserved.
           </p>
         </div>
-        <nav className="flex flex-wrap gap-x-5 gap-y-2">
+        <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
           {links.map((l) => (
             <button
               key={l.id}
@@ -526,6 +549,12 @@ export function Footer() {
               {l.label}
             </button>
           ))}
+          <a
+            href="/academy"
+            className="text-sm font-bold text-accent transition-colors hover:text-foreground"
+          >
+            Academy Vault
+          </a>
         </nav>
       </div>
     </footer>
