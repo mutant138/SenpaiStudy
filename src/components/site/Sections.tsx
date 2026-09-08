@@ -114,6 +114,20 @@ const phases = [
     scope: "Node.js, Express.js, MongoDB, REST APIs, Auth.",
     pre: "HTML, CSS, JS & DOM /React Js",
   },
+  {
+    n: "Phase 4",
+    title: "Gen AI & RAG Mastery",
+    meta: "1 Month • ₹499",
+    scope: "LLM APIs (OpenAI & Gemini), Vector DBs (Chroma/Pinecone), Custom Knowledge-Base RAG, LangChain & Autonomous AI Agents, Production AI Chatbot Deployment.",
+    pre: "Basic JavaScript or Python & Web Fundamentals.",
+  },
+  {
+    n: "Phase 5",
+    title: "Blockchain & Solidity Mastery",
+    meta: "1 Month • ₹499",
+    scope: "Solidity, EVM Architecture, ERC-20 & ERC-721 (NFT) Contracts, OpenZeppelin, Hardhat Testing & Testnet Deployment, Ethers.js / Web3 dApp Integration.",
+    pre: "JavaScript ES6+ & Basic Web Development.",
+  },
 ];
 
 export function Roadmap() {
@@ -132,7 +146,7 @@ export function Roadmap() {
             The <span className="neon-text">Foundation Roadmap</span>
           </>
         }
-        sub="Three one-month tracks, ₹499 each. Take one, take all three — the path is yours."
+        sub="Five one-month tracks, ₹499 each. Take one, take all — choose your path to mastery."
       />
 
       <div className="relative mx-auto mt-16 max-w-4xl">
